@@ -9,3 +9,25 @@
 
 # 385916 -> yes
 # 123456 -> no
+
+number = input('Введите номер билета =')
+number = int(number)
+sumStart = 0
+sumEnd = 0
+
+if number >= 100000 and number <= 999999:
+    end = number % 1000 
+    start = number // 1000
+    while end > 0 and start > 0:
+        sumStart += start % 10 
+        start//=10
+
+        sumEnd += end % 10 
+        end//=10
+  
+    if sumEnd==sumStart:
+        print('Билет счастливый')
+    else:
+        print('Билет не счастливый')
+else:
+    print('Введен не шестизначный номер')
